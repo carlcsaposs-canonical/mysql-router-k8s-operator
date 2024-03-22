@@ -16,6 +16,11 @@
       "matchManagers": ["poetry"],
       "matchPackageNames": ["mysql-connector-python"],
       "groupName": "MySQL Connector/Python"
+    },
+    {
+      "matchManagers": ["poetry"],
+      "matchPackageNames": ["flake8"],
+      "groupName": "flake8 ignore"
     }
   ]
 }
