@@ -78,7 +78,7 @@ jobs:
     name: Integration test charm | ${{ matrix.juju.agent }}
     needs:
       - build
-    uses: canonical/data-platform-workflows/.github/workflows/integration_test_charm.yaml@allure-collection-report-test
+    uses: canonical/data-platform-workflows/.github/workflows/integration_test_charm.yaml@allure-collection-report-test-2
     with:
       artifact-prefix: ${{ needs.build.outputs.artifact-prefix }}
       cloud: microk8s
