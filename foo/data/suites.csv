@@ -1,0 +1,17 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Jun 07 10:20:20 UTC 2024","Fri Jun 07 10:20:21 UTC 2024","1297","tests.integration","test_node_port","","","","test_tls","Test the database relation."
+"unknown","Fri Jun 07 10:13:40 UTC 2024","Fri Jun 07 10:13:40 UTC 2024","0","tests.integration","test_upgrade","","","","test_fail_and_rollback","Upgrade to an invalid version and test rollback.
+
+    Relies on the charm built in the previous test (test_upgrade_from_edge).
+    "
+"passed","Fri Jun 07 10:20:22 UTC 2024","Fri Jun 07 10:20:25 UTC 2024","3129","tests.integration","test_node_port","","","","test_data_integrator","Test the nodeport."
+"passed","Fri Jun 07 10:17:07 UTC 2024","Fri Jun 07 10:20:20 UTC 2024","193279","tests.integration","test_node_port","","","","test_build_and_deploy","Test the deployment of the charm."
+"passed","Fri Jun 07 10:20:21 UTC 2024","Fri Jun 07 10:20:22 UTC 2024","388","tests.integration","test_node_port","","","","test_node_port_and_clusterip_setup","Test the nodeport."
+"passed","Fri Jun 07 10:17:12 UTC 2024","Fri Jun 07 10:21:13 UTC 2024","240193","tests.integration","test_charm","","","","test_database_relation","Test the database relation."
+"unknown","","","","tests.integration","test_exporter","","","","test_exporter_endpoint_with_tls","Test that the exporter endpoint works when related with TLS"
+"passed","Fri Jun 07 10:19:17 UTC 2024","Fri Jun 07 10:22:13 UTC 2024","176345","tests.integration","test_upgrade","","","","test_upgrade_from_edge","Upgrade mysqlrouter while ensuring continuous writes incrementing."
+"passed","Fri Jun 07 10:17:22 UTC 2024","Fri Jun 07 10:19:17 UTC 2024","114800","tests.integration","test_upgrade","","","","test_deploy_edge","Simple test to ensure that mysql, mysqlrouter and application charms deploy."
+"passed","Fri Jun 07 10:16:53 UTC 2024","Fri Jun 07 10:18:28 UTC 2024","94956","tests.integration","test_log_rotation","","","","test_log_rotation","Test log rotation."
+"unknown","Fri Jun 07 10:13:40 UTC 2024","Fri Jun 07 10:13:40 UTC 2024","0","tests.integration","test_exporter","","","","test_exporter_endpoint","Test that exporter endpoint is functional."
+"passed","Fri Jun 07 10:18:31 UTC 2024","Fri Jun 07 10:18:52 UTC 2024","21945","tests.integration","test_tls","","","","test_connected_encryption","Test encryption when backend database is using TLS."
+"passed","Fri Jun 07 10:16:52 UTC 2024","Fri Jun 07 10:18:31 UTC 2024","98033","tests.integration","test_tls","","","","test_build_deploy_and_relate","Test encryption when backend database is using TLS."
