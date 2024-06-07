@@ -32,7 +32,7 @@ pytest = "*"
 type = "git"
 url = "https://github.com/canonical/data-platform-workflows"
 reference = "allure-collection-report"
-resolved_reference = "408207c8b0a63cfbc20e740c9e1b2650aa74bfce"
+resolved_reference = "9c0445a092e03c858cab681a1d457bf37d749c8c"
 subdirectory = "python/pytest_plugins/allure_pytest_collection_report"
 
 [[package]]
