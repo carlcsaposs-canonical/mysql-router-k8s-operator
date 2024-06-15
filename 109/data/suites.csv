@@ -1,0 +1,17 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Jun 15 02:06:24 UTC 2024","Sat Jun 15 02:10:26 UTC 2024","242510","tests.integration","test_charm","","","","test_database_relation","Test the database relation."
+"broken","Sat Jun 15 02:06:39 UTC 2024","Sat Jun 15 02:07:13 UTC 2024","34124","tests.integration","test_node_port","","","","test_build_and_deploy","Test the deployment of the charm."
+"passed","Sat Jun 15 02:08:17 UTC 2024","Sat Jun 15 02:11:26 UTC 2024","189351","tests.integration","test_upgrade","","","","test_upgrade_from_edge","Upgrade mysqlrouter while ensuring continuous writes incrementing."
+"broken","Sat Jun 15 02:06:25 UTC 2024","Sat Jun 15 02:11:23 UTC 2024","298593","tests.integration","test_exporter","","","","test_exporter_endpoint","Test that exporter endpoint is functional."
+"skipped","Sat Jun 15 02:07:13 UTC 2024","Sat Jun 15 02:07:13 UTC 2024","0","tests.integration","test_node_port","","","","test_node_port_and_clusterip_setup","Test the nodeport."
+"passed","Sat Jun 15 02:06:17 UTC 2024","Sat Jun 15 02:07:54 UTC 2024","96502","tests.integration","test_log_rotation","","","","test_log_rotation","Test log rotation."
+"skipped","Sat Jun 15 02:11:23 UTC 2024","Sat Jun 15 02:11:23 UTC 2024","0","tests.integration","test_exporter","","","","test_exporter_endpoint_with_tls","Test that the exporter endpoint works when related with TLS"
+"passed","Sat Jun 15 02:06:11 UTC 2024","Sat Jun 15 02:08:17 UTC 2024","125972","tests.integration","test_upgrade","","","","test_deploy_edge","Simple test to ensure that mysql, mysqlrouter and application charms deploy."
+"skipped","Sat Jun 15 02:07:13 UTC 2024","Sat Jun 15 02:07:13 UTC 2024","0","tests.integration","test_node_port","","","","test_tls","Test the database relation."
+"skipped","Sat Jun 15 02:07:13 UTC 2024","Sat Jun 15 02:07:13 UTC 2024","0","tests.integration","test_node_port","","","","test_data_integrator","Test the nodeport."
+"broken","Sat Jun 15 02:11:26 UTC 2024","Sat Jun 15 02:32:40 UTC 2024","1273634","tests.integration","test_upgrade","","","","test_fail_and_rollback","Upgrade to an invalid version and test rollback.
+
+    Relies on the charm built in the previous test (test_upgrade_from_edge).
+    "
+"passed","Sat Jun 15 02:08:19 UTC 2024","Sat Jun 15 02:08:41 UTC 2024","22045","tests.integration","test_tls","","","","test_connected_encryption","Test encryption when backend database is using TLS."
+"passed","Sat Jun 15 02:06:30 UTC 2024","Sat Jun 15 02:08:19 UTC 2024","108956","tests.integration","test_tls","","","","test_build_deploy_and_relate","Test encryption when backend database is using TLS."
