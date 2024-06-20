@@ -1,0 +1,39 @@
+[32mINFO    [0m integration.test_exporter:test_exporter.py:202 Deploying self-signed-certificates
+[32mINFO    [0m juju.model:model.py:2069 Deploying ch:amd64/jammy/self-signed-certificates-72
+[32mINFO    [0m juju.model:model.py:2759 Waiting for model:
+  self-signed-certificates/0 [allocating] waiting: installing agent
+[32mINFO    [0m juju.model:model.py:2759 Waiting for model:
+  self-signed-certificates/0 [idle] active: 
+[32mINFO    [0m integration.test_exporter:test_exporter.py:213 Relating mysqlrouter with self-signed-certificates
+[33mWARNING [0m juju.model:model.py:1558 relate is deprecated and will be removed. Use integrate instead.
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f61154fe380>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f611599ae60>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f611599a4a0>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[32mINFO    [0m integration.test_exporter:test_exporter.py:239 Relating mysqlrouter with grafana agent
+[33mWARNING [0m juju.model:model.py:1558 relate is deprecated and will be removed. Use integrate instead.
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f6115be93f0>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f61158dad10>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f61154fc370>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[32mINFO    [0m pytest_operator.plugin:plugin.py:790 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.3    unsupported  02:08:54Z
+
+App                       Version                  Status   Scale  Charm                     Channel        Rev  Address         Exposed  Message
+grafana-agent-k8s         0.35.2                   waiting      1  grafana-agent-k8s         latest/stable   68  10.152.183.148  no       installing agent
+mysql-k8s                 8.0.36-0ubuntu0.22.04.1  active       1  mysql-k8s                 8.0/edge       150  10.152.183.157  no       
+mysql-router-k8s          8.0.36-0ubuntu0.22.04.1  active       1  mysql-router-k8s                           0  10.152.183.30   no       
+mysql-test-app            0.0.2                    active       1  mysql-test-app            latest/edge     38  10.152.183.80   no       
+self-signed-certificates                           active       1  self-signed-certificates  latest/stable   72  10.152.183.22   no       
+
+Unit                         Workload  Agent      Address      Ports  Message
+grafana-agent-k8s/0*         blocked   executing  10.1.128.76         Missing ['grafana-cloud-config']|['grafana-dashboards-provider'] for grafana-dashboards-consumer; ['grafana-cloud-con...
+mysql-k8s/0*                 active    idle       10.1.128.77         Primary
+mysql-router-k8s/0*          active    executing  10.1.128.73         
+mysql-test-app/0*            active    idle       10.1.128.72         
+self-signed-certificates/0*  active    idle       10.1.128.78         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:796 Juju error logs:
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Forgetting main...
