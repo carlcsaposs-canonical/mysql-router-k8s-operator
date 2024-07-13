@@ -1,0 +1,44 @@
+[32mINFO    [0m integration.test_exporter:test_exporter.py:202 Deploying self-signed-certificates
+[32mINFO    [0m juju.model:model.py:2069 Deploying ch:amd64/jammy/self-signed-certificates-155
+[32mINFO    [0m juju.model:model.py:2759 Waiting for model:
+  self-signed-certificates/0 [allocating] waiting: installing agent
+[32mINFO    [0m juju.model:model.py:2759 Waiting for model:
+  self-signed-certificates/0 [idle] active: 
+[32mINFO    [0m integration.test_exporter:test_exporter.py:213 Relating mysqlrouter with self-signed-certificates
+[33mWARNING [0m juju.model:model.py:1558 relate is deprecated and will be removed. Use integrate instead.
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f91a1a65f00>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f91a1ba6020>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f91a1a764a0>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[32mINFO    [0m integration.test_exporter:test_exporter.py:239 Relating mysqlrouter with grafana agent
+[33mWARNING [0m juju.model:model.py:1558 relate is deprecated and will be removed. Use integrate instead.
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f91a15f8ac0>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f91a1a05fc0>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f91a1a04af0>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[32mINFO    [0m integration.test_exporter:test_exporter.py:266 Removing relation between mysqlrouter and grafana agent
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f91a1a072b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f91a19045b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f91a12ecf10>: Failed to establish a new connection: [Errno 111] Connection refused')': /metrics
+[32mINFO    [0m integration.test_exporter:test_exporter.py:286 Removing relation between mysqlrouter and self-signed-certificates
+[32mINFO    [0m pytest_operator.plugin:plugin.py:790 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.3    unsupported  02:12:43Z
+
+App                       Version                  Status   Scale  Charm                     Channel        Rev  Address         Exposed  Message
+grafana-agent-k8s         0.32.1                   waiting      1  grafana-agent-k8s         latest/stable   45  10.152.183.111  no       installing agent
+mysql-k8s                 8.0.37-0ubuntu0.22.04.3  active       1  mysql-k8s                 8.0/edge       160  10.152.183.215  no       
+mysql-router-k8s          8.0.36-0ubuntu0.22.04.1  active       1  mysql-router-k8s                           0  10.152.183.66   no       
+mysql-test-app            0.0.2                    active       1  mysql-test-app            latest/edge     46  10.152.183.26   no       
+self-signed-certificates                           active       1  self-signed-certificates  latest/stable  155  10.152.183.152  no       
+
+Unit                         Workload  Agent      Address     Ports  Message
+grafana-agent-k8s/0*         blocked   idle       10.1.73.76         grafana-cloud-config: off, grafana-dashboards-provider: off
+mysql-k8s/0*                 active    idle       10.1.73.77         Primary
+mysql-router-k8s/0*          active    executing  10.1.73.75         
+mysql-test-app/0*            active    idle       10.1.73.72         
+self-signed-certificates/0*  active    idle       10.1.73.78         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:796 Juju error logs:
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Forgetting main...
