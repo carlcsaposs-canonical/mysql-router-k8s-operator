@@ -1,0 +1,17 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Jul 15 02:14:34 UTC 2024","Mon Jul 15 02:16:58 UTC 2024","144219","tests.integration","test_exporter","","","","test_exporter_endpoint","Test that exporter endpoint is functional."
+"passed","Mon Jul 15 02:15:12 UTC 2024","Mon Jul 15 02:19:23 UTC 2024","251260","tests.integration","test_charm","","","","test_database_relation","Test the database relation."
+"failed","Mon Jul 15 02:16:58 UTC 2024","Mon Jul 15 02:17:45 UTC 2024","46740","tests.integration","test_exporter","","","","test_exporter_endpoint_with_tls","Test that the exporter endpoint works when related with TLS"
+"skipped","Mon Jul 15 02:22:07 UTC 2024","Mon Jul 15 02:22:07 UTC 2024","0","tests.integration","test_upgrade","","","","test_fail_and_rollback","Upgrade to an invalid version and test rollback.
+
+    Relies on the charm built in the previous test (test_upgrade_from_edge).
+    "
+"passed","Mon Jul 15 02:14:49 UTC 2024","Mon Jul 15 02:16:30 UTC 2024","100787","tests.integration","test_log_rotation","","","","test_log_rotation","Test log rotation."
+"passed","Mon Jul 15 02:18:37 UTC 2024","Mon Jul 15 02:18:38 UTC 2024","623","tests.integration","test_node_port","","","","test_node_port_and_clusterip_setup","Test the nodeport."
+"passed","Mon Jul 15 02:14:41 UTC 2024","Mon Jul 15 02:16:31 UTC 2024","110076","tests.integration","test_upgrade","","","","test_deploy_edge","Simple test to ensure that mysql, mysqlrouter and application charms deploy."
+"failed","Mon Jul 15 02:16:31 UTC 2024","Mon Jul 15 02:22:07 UTC 2024","336609","tests.integration","test_upgrade","","","","test_upgrade_from_edge","Upgrade mysqlrouter while ensuring continuous writes incrementing."
+"passed","Mon Jul 15 02:18:38 UTC 2024","Mon Jul 15 02:18:41 UTC 2024","3123","tests.integration","test_node_port","","","","test_data_integrator","Test the nodeport."
+"passed","Mon Jul 15 02:15:00 UTC 2024","Mon Jul 15 02:18:35 UTC 2024","214765","tests.integration","test_node_port","","","","test_build_and_deploy","Test the deployment of the charm."
+"passed","Mon Jul 15 02:16:45 UTC 2024","Mon Jul 15 02:17:07 UTC 2024","22159","tests.integration","test_tls","","","","test_connected_encryption","Test encryption when backend database is using TLS."
+"passed","Mon Jul 15 02:15:01 UTC 2024","Mon Jul 15 02:16:45 UTC 2024","103815","tests.integration","test_tls","","","","test_build_deploy_and_relate","Test encryption when backend database is using TLS."
+"passed","Mon Jul 15 02:18:35 UTC 2024","Mon Jul 15 02:18:37 UTC 2024","2507","tests.integration","test_node_port","","","","test_tls","Test the database relation."
