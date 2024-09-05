@@ -1,0 +1,35 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:790 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.3    unsupported  02:37:14Z
+
+App                       Version                  Status   Scale  Charm                     Channel        Rev  Address         Exposed  Message
+data-integrator                                    waiting      1  data-integrator           latest/edge     43  10.152.183.139  no       installing agent
+mysql-k8s                 8.0.37-0ubuntu0.22.04.3  active       3  mysql-k8s                 8.0/edge       186  10.152.183.51   no       
+mysql-router-k8s                                   waiting      1  mysql-router-k8s                           0  10.152.183.115  no       installing agent
+mysql-test-app            0.0.2                    waiting      1  mysql-test-app            latest/edge     51  10.152.183.99   no       installing agent
+self-signed-certificates                           active       1  self-signed-certificates  latest/stable  155  10.152.183.191  no       
+
+Unit                         Workload  Agent  Address       Ports  Message
+data-integrator/0*           blocked   idle   10.1.132.203         Please relate the data-integrator with the desired product
+mysql-k8s/0                  active    idle   10.1.132.207         
+mysql-k8s/1                  active    idle   10.1.132.209         
+mysql-k8s/2*                 active    idle   10.1.132.208         Primary
+mysql-router-k8s/0*          unknown   idle   10.1.132.200         
+mysql-test-app/0*            waiting   idle   10.1.132.201         
+self-signed-certificates/0*  active    idle   10.1.132.202         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:796 Juju error logs:
+
+unit-mysql-k8s-1: 02:30:52 ERROR unit.mysql-k8s/1.juju-log Failed to get cluster status for cluster-47d58eea66752eb3483c314e3fb029ce
+unit-mysql-k8s-1: 02:30:52 ERROR unit.mysql-k8s/1.juju-log Failed to get cluster endpoints
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-mysql-k8s-1/charm/src/mysql_k8s_helpers.py", line 792, in update_endpoints
+    rw_endpoints, ro_endpoints, offline = self.get_cluster_endpoints(get_ips=False)
+  File "/var/lib/juju/agents/unit-mysql-k8s-1/charm/lib/charms/tempo_k8s/v1/charm_tracing.py", line 735, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-mysql-k8s-1/charm/lib/charms/mysql/v0/mysql.py", line 1874, in get_cluster_endpoints
+    raise MySQLGetClusterEndpointsError("Failed to get endpoints from cluster status")
+charms.mysql.v0.mysql.MySQLGetClusterEndpointsError: Failed to get endpoints from cluster status
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Forgetting main...
