@@ -1,0 +1,21 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:790 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.3    unsupported  02:41:03Z
+
+App                       Version                  Status   Scale  Charm                     Channel        Rev  Address         Exposed  Message
+mysql-k8s                 8.0.37-0ubuntu0.22.04.3  active       1  mysql-k8s                 8.0/edge       205  10.152.183.140  no       
+mysql-router-k8s                                   waiting      1  mysql-router-k8s                           0  10.152.183.58   no       installing agent
+mysql-test-app            0.0.2                    waiting      1  mysql-test-app            latest/edge     63  10.152.183.56   no       installing agent
+self-signed-certificates                           active       1  self-signed-certificates  latest/stable  155  10.152.183.164  no       
+
+Unit                         Workload  Agent  Address       Ports  Message
+mysql-k8s/0*                 active    idle   10.1.125.203         Primary
+mysql-router-k8s/0*          unknown   idle   10.1.125.201         
+mysql-test-app/0*            waiting   idle   10.1.125.204         
+self-signed-certificates/0*  active    idle   10.1.125.202         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:796 Juju error logs:
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Forgetting main...
