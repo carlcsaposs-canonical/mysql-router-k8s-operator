@@ -1,0 +1,149 @@
+[32mINFO    [0m pytest_operator.plugin:plugin.py:790 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.3    unsupported  02:55:28Z
+
+App                Version                  Status   Scale  Charm              Channel        Rev  Address         Exposed  Message
+grafana-agent-k8s  0.32.1                   waiting      1  grafana-agent-k8s  latest/stable   45  10.152.183.130  no       installing agent
+mysql-k8s          8.0.37-0ubuntu0.22.04.3  active       1  mysql-k8s          8.0/edge       208  10.152.183.108  no       
+mysql-router-k8s                            waiting      1  mysql-router-k8s                    0  10.152.183.71   no       installing agent
+mysql-test-app     0.0.2                    waiting      1  mysql-test-app     latest/edge     63  10.152.183.26   no       installing agent
+
+Unit                  Workload  Agent  Address       Ports  Message
+grafana-agent-k8s/0*  blocked   idle   10.1.215.141         Missing incoming ('requires') relation
+mysql-k8s/0*          active    idle   10.1.215.140         Primary
+mysql-router-k8s/0*   unknown   idle   10.1.215.136         
+mysql-test-app/0*     waiting   idle   10.1.215.137         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:796 Juju error logs:
+
+unit-mysql-k8s-0: 02:32:23 ERROR unit.mysql-k8s/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/./src/charm.py", line 926, in <module>
+    main(MySQLOperatorCharm)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/lib/charms/tempo_coordinator_k8s/v0/charm_tracing.py", line 734, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/./src/charm.py", line 846, in _on_update_status
+    if self._is_cluster_blocked():
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/lib/charms/tempo_coordinator_k8s/v0/charm_tracing.py", line 734, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/./src/charm.py", line 818, in _is_cluster_blocked
+    member_state, _ = self._mysql.get_member_state()
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/lib/charms/tempo_coordinator_k8s/v0/charm_tracing.py", line 734, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/tenacity/__init__.py", line 330, in wrapped_f
+    return self(f, *args, **kw)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/tenacity/__init__.py", line 467, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/tenacity/__init__.py", line 368, in iter
+    result = action(retry_state)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/tenacity/__init__.py", line 410, in exc_check
+    raise retry_exc.reraise()
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/tenacity/__init__.py", line 183, in reraise
+    raise self.last_attempt.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/tenacity/__init__.py", line 470, in __call__
+    result = fn(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/lib/charms/mysql/v0/mysql.py", line 2407, in get_member_state
+    output = self._run_mysqlcli_script(
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/lib/charms/tempo_coordinator_k8s/v0/charm_tracing.py", line 734, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/src/mysql_k8s_helpers.py", line 661, in _run_mysqlcli_script
+    process = self.container.exec(command, timeout=timeout)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/model.py", line 2872, in exec
+    return self._pebble.exec(
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/pebble.py", line 2884, in exec
+    resp = self._request('POST', '/v1/exec', body=body)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/pebble.py", line 1995, in _request
+    response = self._request_raw(method, path, query, headers, data)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/pebble.py", line 2048, in _request_raw
+    raise ConnectionError(
+ops.pebble.ConnectionError: Could not connect to Pebble: socket not found at '/charm/containers/mysql/pebble.socket' (container restarted?)
+unit-mysql-k8s-0: 02:32:24 ERROR juju.worker.uniter.operation hook "update-status" (via hook dispatching script: dispatch) failed: exit status 1
+unit-mysql-k8s-0: 02:32:49 ERROR unit.mysql-k8s/0.juju-log Uncaught exception while in charm code:
+Traceback (most recent call last):
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/./src/charm.py", line 926, in <module>
+    main(MySQLOperatorCharm)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/main.py", line 551, in main
+    manager.run()
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/main.py", line 530, in run
+    self._emit()
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/main.py", line 519, in _emit
+    _emit_charm_event(self.charm, self.dispatcher.event_name)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/main.py", line 147, in _emit_charm_event
+    event_to_emit.emit(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/framework.py", line 348, in emit
+    framework._emit(event)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/framework.py", line 860, in _emit
+    self._reemit(event_path)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/framework.py", line 950, in _reemit
+    custom_handler(event)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/lib/charms/tempo_coordinator_k8s/v0/charm_tracing.py", line 734, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/./src/charm.py", line 846, in _on_update_status
+    if self._is_cluster_blocked():
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/lib/charms/tempo_coordinator_k8s/v0/charm_tracing.py", line 734, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/./src/charm.py", line 818, in _is_cluster_blocked
+    member_state, _ = self._mysql.get_member_state()
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/lib/charms/tempo_coordinator_k8s/v0/charm_tracing.py", line 734, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/tenacity/__init__.py", line 330, in wrapped_f
+    return self(f, *args, **kw)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/tenacity/__init__.py", line 467, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/tenacity/__init__.py", line 368, in iter
+    result = action(retry_state)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/tenacity/__init__.py", line 410, in exc_check
+    raise retry_exc.reraise()
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/tenacity/__init__.py", line 183, in reraise
+    raise self.last_attempt.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/tenacity/__init__.py", line 470, in __call__
+    result = fn(*args, **kwargs)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/lib/charms/mysql/v0/mysql.py", line 2407, in get_member_state
+    output = self._run_mysqlcli_script(
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/lib/charms/tempo_coordinator_k8s/v0/charm_tracing.py", line 734, in wrapped_function
+    return callable(*args, **kwargs)  # type: ignore
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/src/mysql_k8s_helpers.py", line 661, in _run_mysqlcli_script
+    process = self.container.exec(command, timeout=timeout)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/model.py", line 2872, in exec
+    return self._pebble.exec(
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/pebble.py", line 2884, in exec
+    resp = self._request('POST', '/v1/exec', body=body)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/pebble.py", line 1995, in _request
+    response = self._request_raw(method, path, query, headers, data)
+  File "/var/lib/juju/agents/unit-mysql-k8s-0/charm/venv/ops/pebble.py", line 2048, in _request_raw
+    raise ConnectionError(
+ops.pebble.ConnectionError: Could not connect to Pebble: socket not found at '/charm/containers/mysql/pebble.socket' (container restarted?)
+unit-mysql-k8s-0: 02:32:50 ERROR juju.worker.uniter.operation hook "update-status" (via hook dispatching script: dispatch) failed: exit status 1
+unit-mysql-k8s-0: 02:33:01 ERROR unit.mysql-k8s/0.juju-log Failed to get member state: mysqld daemon is down
+unit-mysql-k8s-0: 02:33:11 ERROR unit.mysql-k8s/0.juju-log Failed to get member state: mysqld daemon is down
+unit-mysql-k8s-0: 02:33:21 ERROR unit.mysql-k8s/0.juju-log Failed to get member state: mysqld daemon is down
+unit-mysql-k8s-0: 02:33:21 ERROR unit.mysql-k8s/0.juju-log Error getting member state while checking if cluster is blocked
+unit-mysql-k8s-0: 02:33:21 ERROR unit.mysql-k8s/0.juju-log Failed to get member state: mysqld daemon is down
+unit-mysql-k8s-0: 02:33:31 ERROR unit.mysql-k8s/0.juju-log Failed to get member state: mysqld daemon is down
+unit-mysql-k8s-0: 02:33:41 ERROR unit.mysql-k8s/0.juju-log Failed to get member state: mysqld daemon is down
+unit-mysql-k8s-0: 02:33:41 ERROR unit.mysql-k8s/0.juju-log Error getting member state while checking if cluster is blocked
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Forgetting main...
