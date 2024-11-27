@@ -1,0 +1,47 @@
+[33mWARNING [0m juju.client.connection:connection.py:657 RPC: Connection closed, reconnecting
+[31m[1mERROR   [0m asyncio:base_events.py:1758 Task exception was never retrieved
+future: <Task finished name='Task-2765' coro=<Connection.reconnect() done, defined at /home/runner/work/mysql-router-k8s-operator/mysql-router-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py:782> exception=OSError(9, 'Bad file descriptor')>
+Traceback (most recent call last):
+  File "/home/runner/work/mysql-router-k8s-operator/mysql-router-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 791, in reconnect
+    res = await connector(
+  File "/home/runner/work/mysql-router-k8s-operator/mysql-router-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 869, in _connect_with_login
+    await self._connect(endpoints)
+  File "/home/runner/work/mysql-router-k8s-operator/mysql-router-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 819, in _connect
+    result = await task
+  File "/usr/lib/python3.10/asyncio/tasks.py", line 571, in _wait_for_one
+    return f.result()  # May raise f.exception().
+  File "/home/runner/work/mysql-router-k8s-operator/mysql-router-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 808, in _try_endpoint
+    return await self._open(endpoint, cacert)
+  File "/home/runner/work/mysql-router-k8s-operator/mysql-router-k8s-operator/.tox/integration/lib/python3.10/site-packages/juju/client/connection.py", line 430, in _open
+    return (await websockets.connect(
+  File "/home/runner/work/mysql-router-k8s-operator/mysql-router-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 655, in __await_impl_timeout__
+    return await self.__await_impl__()
+  File "/home/runner/work/mysql-router-k8s-operator/mysql-router-k8s-operator/.tox/integration/lib/python3.10/site-packages/websockets/legacy/client.py", line 659, in __await_impl__
+    _transport, _protocol = await self._create_connection()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1103, in create_connection
+    transport, protocol = await self._create_connection_transport(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1119, in _create_connection_transport
+    sock.setblocking(False)
+OSError: [Errno 9] Bad file descriptor
+[31m[1mERROR   [0m juju.client.connection:connection.py:665 RPC: Automatic reconnect failed
+[32mINFO    [0m pytest_operator.plugin:plugin.py:790 Model status:
+
+Model  Controller          Cloud/Region        Version  SLA          Timestamp
+test   microk8s-localhost  microk8s/localhost  3.4.3    unsupported  02:41:20Z
+
+App               Version                  Status   Scale  Charm             Channel      Rev  Address         Exposed  Message
+mysql-k8s         8.0.37-0ubuntu0.22.04.3  active       1  mysql-k8s         8.0/edge     208  10.152.183.138  no       
+mysql-router-k8s  8.0.37-0ubuntu0.22.04.3  waiting      3  mysql-router-k8s  8.0/edge       0  10.152.183.224  no       installing agent
+mysql-test-app    0.0.2                    active       1  mysql-test-app    latest/edge   63  10.152.183.65   no       
+
+Unit                 Workload     Agent  Address      Ports  Message
+mysql-k8s/0*         active       idle   10.1.41.205         Primary
+mysql-router-k8s/0*  active       idle   10.1.41.201         Router 8.0.37 running (restart pending); Charmed operator 1.2+31518a0
+mysql-router-k8s/1   active       idle   10.1.41.202         Router 8.0.37 running (restart pending); Charmed operator 1.2+31518a0
+mysql-router-k8s/2   maintenance  idle   10.1.41.206         
+mysql-test-app/0*    active       idle   10.1.41.200         
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:796 Juju error logs:
+
+
+[32mINFO    [0m pytest_operator.plugin:plugin.py:862 Forgetting main...
